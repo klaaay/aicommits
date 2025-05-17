@@ -1,6 +1,6 @@
 {
 	"name": "klay-aicommits",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Writes your git commit messages for you with AI",
 	"keywords": [
 		"ai",
