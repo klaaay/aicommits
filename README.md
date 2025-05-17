@@ -188,7 +188,7 @@ aicommits config set proxy=
 
 #### model
 
-Default: `gpt-3.5-turbo`
+Default: `deepseek-chat`
 
 The Chat Completions (`/v1/chat/completions`) model to use. Consult the list of models available in the [OpenAI Documentation](https://platform.openai.com/docs/models/model-endpoint-compatibility).
 
