@@ -57,7 +57,7 @@ const configParsers = {
 	},
 	type(type?: string) {
 		if (!type) {
-			return '';
+			return 'conventional';
 		}
 
 		parseAssert('type', commitTypes.includes(type as CommitType), 'Invalid commit type');
