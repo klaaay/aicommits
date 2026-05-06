@@ -134,6 +134,9 @@ export const generateCommitMessage = async (
 			apiKey,
 			{
 				model,
+				// DeepSeek V4 defaults to thinking mode; assistant text then often splits across
+				// reasoning_content vs content. Commit messages match legacy deepseek-chat (non-thinking).
+				thinking: { type: 'disabled' },
 				messages: [
 					{
 						role: 'system',
@@ -151,7 +154,7 @@ export const generateCommitMessage = async (
 				max_tokens: 200,
 				stream: false,
 				n: completions,
-			},
+			} as CreateChatCompletionRequest & { thinking: { type: 'disabled' } },
 			timeout,
 			proxy,
 		);
