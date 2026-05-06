@@ -1,10 +1,6 @@
 import https from 'https';
 import type { ClientRequest, IncomingMessage } from 'http';
 import type { CreateChatCompletionRequest, CreateChatCompletionResponse } from 'openai';
-import {
-	type TiktokenModel,
-	// encoding_for_model,
-} from '@dqbd/tiktoken';
 import createHttpsProxyAgent from 'https-proxy-agent';
 import { KnownError } from './error.js';
 import type { CommitType } from './config.js';
@@ -114,7 +110,7 @@ const deduplicateMessages = (array: string[]) => Array.from(new Set(array));
 // 	return result;
 // };
 
-// const getTokens = (prompt: string, model: TiktokenModel) => {
+// const getTokens = (prompt: string, model: string) => {
 // 	const encoder = encoding_for_model(model);
 // 	const tokens = encoder.encode(prompt).length;
 // 	// Free the encoder to avoid possible memory leaks.
@@ -124,7 +120,7 @@ const deduplicateMessages = (array: string[]) => Array.from(new Set(array));
 
 export const generateCommitMessage = async (
 	apiKey: string,
-	model: TiktokenModel,
+	model: string,
 	locale: string,
 	diff: string,
 	completions: number,

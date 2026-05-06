@@ -188,7 +188,7 @@ aicommits config set proxy=
 
 #### model
 
-Default: `deepseek-chat`
+Default: `deepseek-v4-flash`
 
 The Chat Completions (`/v1/chat/completions`) model to use. Consult the list of models available in the [OpenAI Documentation](https://platform.openai.com/docs/models/model-endpoint-compatibility).
 

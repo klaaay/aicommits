@@ -2,7 +2,6 @@ import fs from 'fs/promises';
 import path from 'path';
 import os from 'os';
 import ini from 'ini';
-import type { TiktokenModel } from '@dqbd/tiktoken';
 import { fileExists } from './fs.js';
 import { KnownError } from './error.js';
 
@@ -75,10 +74,10 @@ const configParsers = {
 	},
 	model(model?: string) {
 		if (!model || model.length === 0) {
-			return 'deepseek-chat';
+			return 'deepseek-v4-flash';
 		}
 
-		return model as TiktokenModel;
+		return model;
 	},
 	timeout(timeout?: string) {
 		if (!timeout) {
